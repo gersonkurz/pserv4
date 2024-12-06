@@ -85,7 +85,7 @@ namespace pserv4.services
                     }
                 }
 
-                int iPtr = lpServices.ToInt32();
+                long iPtr = lpServices.ToInt64();
                 for (int i = 0; i < ServicesReturned; i++)
                 {
                     ENUM_SERVICE_STATUS_PROCESS essp = (ENUM_SERVICE_STATUS_PROCESS)

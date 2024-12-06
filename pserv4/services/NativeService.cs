@@ -26,7 +26,7 @@ namespace pserv4.services
 
         public override string ToString()
         {
-            return string.Format("NativeService({0}: {1})", Handle.ToInt32(), ServiceName);
+            return string.Format("NativeService({0}: {1})", Handle.ToInt64(), ServiceName);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace pserv4.services
                 serviceName,
                 (uint)am);
 
-            IsValid = (Handle.ToInt32() != 0);
+            IsValid = (Handle.ToInt64() != 0);
             if (!IsValid)
             {
                 NativeHelpers.ReportFailure("OpenService({0}, {1})", serviceName, am);
@@ -73,7 +73,7 @@ namespace pserv4.services
                     {
                         return (QUERY_SERVICE_CONFIG)
                             Marshal.PtrToStructure(
-                                new IntPtr(lpMemory.ToInt32()),
+                                new IntPtr(lpMemory.ToInt64()),
                                 typeof(QUERY_SERVICE_CONFIG));
                     }
                     NativeHelpers.ReportFailure("QueryServiceConfig({0})", ServiceName);
@@ -109,7 +109,7 @@ namespace pserv4.services
                     {
                         SERVICE_DESCRIPTION sd = (SERVICE_DESCRIPTION)
                             Marshal.PtrToStructure(
-                                new IntPtr(lpMemory.ToInt32()),
+                                new IntPtr(lpMemory.ToInt64()),
                                 typeof(SERVICE_DESCRIPTION));
                         return sd.Description;
                     }
