@@ -22,13 +22,16 @@ using log4net;
 using GSharpTools;
 using GSharpTools.WPF;
 using pserv4.Properties;
+using System.Runtime.Versioning;
 
 namespace pserv4
 {
+    [SupportedOSPlatform("windows")]
     /// <summary>
     /// This class is used to sort the list.
     /// The main argument is a stack of sort order arguments, to dis-ambiguate comparisons
     /// </summary>
+
     internal class SortDataObjects : IComparer
     {
         private readonly SortOrderList SortOrderList;

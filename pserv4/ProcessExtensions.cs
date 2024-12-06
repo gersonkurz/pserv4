@@ -19,9 +19,12 @@ using pserv4.Properties;
 using log4net;
 using System.Reflection;
 using GSharpTools;
+using System.Runtime.Versioning;
 
 namespace pserv4
 {
+
+    [SupportedOSPlatform("windows")]
     public static class ProcessExtensions
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

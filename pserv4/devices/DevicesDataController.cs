@@ -5,9 +5,11 @@ using System.Text;
 using System.Collections.ObjectModel;
 using pserv4.services;
 using pserv4.Properties;
+using System.Runtime.Versioning;
 
 namespace pserv4.devices
 {
+    [SupportedOSPlatform("windows")]
     public class DevicesDataController : ServicesDataController
     {
         public DevicesDataController()

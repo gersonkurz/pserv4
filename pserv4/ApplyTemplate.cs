@@ -6,9 +6,12 @@ using System.Threading;
 using System.Diagnostics;
 using log4net;
 using System.Reflection;
+using System.Runtime.Versioning;
 
 namespace pserv4
 {
+    [SupportedOSPlatform("windows")]
+
     public class ApplyTemplate : BackgroundAction
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

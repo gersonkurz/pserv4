@@ -9,9 +9,11 @@ using Microsoft.Win32;
 using log4net;
 using System.Reflection;
 using GSharpTools;
+using System.Runtime.Versioning;
 
 namespace pserv4.services
 {
+    [SupportedOSPlatform("windows")]
     public class ServiceDataObject : DataObject
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

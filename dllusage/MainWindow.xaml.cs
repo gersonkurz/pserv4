@@ -24,9 +24,11 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Xml;
 using GSharpTools.WPF;
+using System.Runtime.Versioning;
 
 namespace dllusage
 {
+    [SupportedOSPlatform("windows")]
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>

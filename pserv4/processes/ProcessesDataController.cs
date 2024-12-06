@@ -18,9 +18,12 @@ using Microsoft.Win32;
 using pserv4.Properties;
 using log4net;
 using System.Reflection;
+using System.Runtime.Versioning;
 
 namespace pserv4.processes
 {
+    [SupportedOSPlatform("windows")]
+
     public class ProcessesDataController : DataController
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

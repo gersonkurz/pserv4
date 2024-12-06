@@ -16,10 +16,13 @@ using GSharpTools;
 
 using LUID = System.Int64;
 using HANDLE = System.IntPtr;
+using System.Runtime.Versioning;
 
 
 namespace pserv4.processes
 {
+    [SupportedOSPlatform("windows")]
+
     public class ProcessDataObject : DataObject
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

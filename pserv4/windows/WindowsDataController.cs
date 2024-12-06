@@ -6,9 +6,12 @@ using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using pserv4.Properties;
 using System.Windows;
+using System.Runtime.Versioning;
 
 namespace pserv4.windows
 {
+    [SupportedOSPlatform("windows")]
+
     public class WindowsDataController : DataController
     {
         public WindowsDataController()

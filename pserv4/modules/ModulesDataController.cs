@@ -18,9 +18,11 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using log4net;
 using System.Reflection;
+using System.Runtime.Versioning;
 
 namespace pserv4.modules
 {
+    [SupportedOSPlatform("windows")]
     public class ModulesDataController : DataController
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

@@ -1,42 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{956DAFC8-7C82-4AC8-B5E1-15C35D31EF1A}</ProjectGuid>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>pserv4</RootNamespace>
-    <AssemblyName>pserv4</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
-    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -48,143 +24,12 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Management.Instrumentation" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <None Update="app.manifest">
       <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="ActionTemplateInfo.cs" />
-    <Compile Include="ApplyTemplate.cs" />
-    <Compile Include="BackgroundAction.cs" />
-    <Compile Include="ConnectMachineDialog.xaml.cs">
-      <DependentUpon>ConnectMachineDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="devices\DevicesDataController.cs" />
-    <Compile Include="DataObject.cs" />
-    <Compile Include="FileVersionInfoCache.cs" />
-    <Compile Include="IDataObjectDetails.cs" />
-    <Compile Include="Localisation.cs" />
-    <Compile Include="LongRunningFunctionWindow.xaml.cs">
-      <DependentUpon>LongRunningFunctionWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainViewType.cs" />
-    <Compile Include="modules\ModuleDataObject.cs" />
-    <Compile Include="modules\ModulesDataController.cs" />
-    <Compile Include="DataObjectColumn.cs" />
-    <Compile Include="DataController.cs" />
-    <Compile Include="NativeHelpers.cs" />
-    <Compile Include="processes\NativeProcessFunctions.cs" />
-    <Compile Include="processes\ProcessDataObject.cs" />
-    <Compile Include="processes\ProcessesDataController.cs" />
-    <Compile Include="processes\ProcessInfoCache.cs" />
-    <Compile Include="ProcessExtensions.cs" />
-    <Compile Include="PropertiesWindow.xaml.cs">
-      <DependentUpon>PropertiesWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RefreshManager.cs" />
-    <Compile Include="services\NativeSCManager.cs" />
-    <Compile Include="services\NativeService.cs" />
-    <Compile Include="services\NativeServiceFunctions.cs" />
-    <Compile Include="services\PerformServiceStateRequest.cs" />
-    <Compile Include="services\RequestServiceContinue.cs" />
-    <Compile Include="services\RequestServicePause.cs" />
-    <Compile Include="services\RequestServiceRestart.cs" />
-    <Compile Include="services\RequestServiceStop.cs" />
-    <Compile Include="services\RequestServiceStart.cs" />
-    <Compile Include="services\ServiceProperties.xaml.cs">
-      <DependentUpon>ServiceProperties.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="services\ServicesDataController.cs" />
-    <Compile Include="services\ServiceDataObject.cs" />
-    <Compile Include="services\ServicesLocalisation.cs" />
-    <Compile Include="services\ServiceStateRequest.cs" />
-    <Compile Include="services\ServiceStatus.cs" />
-    <Compile Include="SortDataObjects.cs" />
-    <Compile Include="SortOrderList.cs" />
-    <Compile Include="uninstaller\UninstallerDataController.cs" />
-    <Compile Include="uninstaller\UninstallerDataObject.cs" />
-    <Compile Include="uninstaller\UninstallerProperties.xaml.cs">
-      <DependentUpon>UninstallerProperties.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="windows\NativeWindowFunctions.cs" />
-    <Compile Include="windows\WindowsDataController.cs" />
-    <Compile Include="windows\WindowDataObject.cs" />
-    <Page Include="ConnectMachineDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LongRunningFunctionWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="PropertiesWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="services\ServiceProperties.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="uninstaller\UninstallerProperties.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <None Include="app.manifest">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\server.png" />
@@ -266,14 +111,8 @@
     <Resource Include="images\computer.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GSharpTools.WPF\GSharpTools.WPF.csproj">
-      <Project>{ddfe27c1-3c3b-444a-9d6c-ed2fb47ca51f}</Project>
-      <Name>GSharpTools.WPF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GSharpTools\GSharpTools.csproj">
-      <Project>{20724c62-41c0-419d-832a-7f637ac41d4a}</Project>
-      <Name>GSharpTools</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\GSharpTools.WPF\GSharpTools.WPF.csproj" />
+    <ProjectReference Include="..\GSharpTools\GSharpTools.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\database_table.png" />
@@ -284,12 +123,8 @@
   <ItemGroup>
     <Resource Include="images\database_connect.png" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Management" Version="9.0.0" />
+  </ItemGroup>
 </Project>

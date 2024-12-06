@@ -19,9 +19,11 @@ using System.Diagnostics;
 using log4net;
 using System.Reflection;
 using GSharpTools.WPF;
+using System.Runtime.Versioning;
 
 namespace pserv4.uninstaller
 {
+    [SupportedOSPlatform("windows")]
     public class UninstallerDataController : DataController
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

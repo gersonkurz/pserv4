@@ -13,9 +13,11 @@ using GSharpTools;
 using GSharpTools.WPF;
 using log4net;
 using System.Reflection;
+using System.Runtime.Versioning;
 
 namespace pserv4.services
 {
+    [SupportedOSPlatform("windows")]
     public class ServicesDataController : DataController
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

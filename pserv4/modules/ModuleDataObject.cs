@@ -9,9 +9,11 @@ using System.Security.Principal;
 using System.Diagnostics;
 using System.IO;
 using GSharpTools;
+using System.Runtime.Versioning;
 
 namespace pserv4.modules
 {
+    [SupportedOSPlatform("windows")]
     public class ModuleDataObject : DataObject
     {
         public string ProcessID { get; private set; }

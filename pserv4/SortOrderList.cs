@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.Versioning;
 using System.Text;
 
 namespace pserv4
 {
+    [SupportedOSPlatform("windows")]
+
     internal class SortOrderListElement
     {
         public readonly ListSortDirection Direction;
@@ -17,9 +20,11 @@ namespace pserv4
         }
     }
 
+    [SupportedOSPlatform("windows")]
+
     internal class SortOrderList
     {
-        public readonly List<SortOrderListElement> Items = new List<SortOrderListElement>();
+        public readonly List<SortOrderListElement> Items = new ();
 
         public ListSortDirection LastSortDirection
         {

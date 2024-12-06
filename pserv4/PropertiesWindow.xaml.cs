@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,6 +14,8 @@ using System.Windows.Shapes;
 
 namespace pserv4
 {
+    [SupportedOSPlatform("windows")]
+
     /// <summary>
     /// Interaction logic for PropertiesWindow.xaml
     /// </summary>

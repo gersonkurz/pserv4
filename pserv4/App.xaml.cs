@@ -8,11 +8,14 @@ using System.Diagnostics;
 using log4net;
 using System.Reflection;
 using GSharpTools;
+using System.Runtime.Versioning;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 namespace pserv4
 {
+    [SupportedOSPlatform("windows")]
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>

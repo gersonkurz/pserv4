@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,6 +16,7 @@ using Microsoft.Win32;
 
 namespace pserv4.services
 {
+    [SupportedOSPlatform("windows")]
     /// <summary>
     /// Interaction logic for ServiceDetails.xaml
     /// </summary>

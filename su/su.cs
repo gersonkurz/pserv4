@@ -5,9 +5,11 @@ using System.IO;
 using GSharpTools;
 using System.Collections.Generic;
 using System.Text;
+using System.Runtime.Versioning;
 
 namespace su
 {
+    [SupportedOSPlatform("windows")]
     class su
     {
         /// <summary>

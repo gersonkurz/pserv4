@@ -14,9 +14,11 @@ using System.Windows.Shapes;
 using System.Diagnostics;
 using Microsoft.Win32;
 using GSharpTools;
+using System.Runtime.Versioning;
 
 namespace pserv4.uninstaller
 {
+    [SupportedOSPlatform("windows")]
     /// <summary>
     /// Interaction logic for UninstallerProperties.xaml
     /// </summary>

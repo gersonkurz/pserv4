@@ -12,9 +12,11 @@ using Microsoft.Win32;
 using log4net;
 using System.Reflection;
 using GSharpTools;
+using System.Runtime.Versioning;
 
 namespace pserv4.uninstaller
 {
+    [SupportedOSPlatform("windows")]
     public class UninstallerDataObject : DataObject
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

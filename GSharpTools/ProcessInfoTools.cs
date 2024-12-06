@@ -10,9 +10,11 @@ using System.Collections;
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
 using log4net;
+using System.Runtime.Versioning;
 
 namespace GSharpTools
 {
+    [SupportedOSPlatform("windows")]
     public static class ProcessInfoTools
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

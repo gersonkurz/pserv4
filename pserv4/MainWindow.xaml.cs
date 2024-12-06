@@ -22,9 +22,12 @@ using log4net;
 using GSharpTools;
 using GSharpTools.WPF;
 using pserv4.Properties;
+using System.Runtime.Versioning;
 
 namespace pserv4
 {
+    [SupportedOSPlatform("windows")]
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>

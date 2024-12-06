@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Management;
+using System.Runtime.Versioning;
 
 namespace remove_admin_shares
 {
+    [SupportedOSPlatform("windows")]
     class remove_admin_shares
     {
         static void Main(string[] args)

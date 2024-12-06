@@ -10,12 +10,13 @@ using System.Diagnostics;
 using System.IO;
 using pserv4.Properties;
 using System.Management;
-using System.Management.Instrumentation;
 using log4net;
 using System.Reflection;
+using System.Runtime.Versioning;
 
 namespace pserv4.processes
 {
+    [SupportedOSPlatform("windows")]
     public class ProcessInfoCache
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

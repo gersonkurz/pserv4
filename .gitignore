@@ -1,0 +1,7 @@
+# Python-generated files
+**/obj/**
+**/bin/**
+.vs/**
+**/Debug/**
+**/Release/**
+**/.vs/**
