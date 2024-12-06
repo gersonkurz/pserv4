@@ -368,7 +368,7 @@ namespace pserv4
             }
         }
 
-        private void MainListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        internal void MainListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             bool enabled = MainListView.SelectedItems.Count > 0;
 

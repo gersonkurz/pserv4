@@ -325,6 +325,8 @@ namespace pserv4.services
             {
                 new LongRunningFunctionWindow(pssr, title).ShowDialog();
             }
+
+            MainWindow.Instance.MainListView_SelectionChanged(this, null);
         }
 
         public override void OnControlStart(object sender, RoutedEventArgs e)
